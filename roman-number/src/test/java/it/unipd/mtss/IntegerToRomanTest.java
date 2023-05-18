@@ -6,7 +6,7 @@ import static org.junit.Assert.*;
 /**
  * Unit test for IntegerToRoman
 */
-public class TestIntToRoman {
+public class IntegerToRomanTest {
 
     /**
      * Test conversione
