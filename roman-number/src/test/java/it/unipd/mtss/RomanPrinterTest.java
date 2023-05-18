@@ -87,5 +87,44 @@ public class RomanPrinterTest {
         assertEquals(s, RomanPrinter.print(3999));
     }
 
+    /**
+     * Test errore: 0
+     */
+    @Test
+    public void testNumero_0() {
+        String s = "0 non è convertibile in numerazione romana.";
+        try {
+            assertEquals("", RomanPrinter.print(0));
+            fail("Test failed as expected");
+        } catch (Exception e) {
+            assertEquals(s, e.getMessage());
+        }
+    }
+    /**
+     * Test errore: n < 0
+     */
+    @Test
+    public void testNumeroNegativo() {
+        String s = "Non e' possibile convertire un numero negativo.";
+        try {
+            assertEquals("", RomanPrinter.print(-1));
+            fail("Test failed as expected");
+        } catch (Exception e) {
+            assertEquals(s, e.getMessage());
+        }
+    }
+    /**
+     * Test errore: 4000 > 3999
+     */
+    @Test
+    public void testNumeroMaxInt() {
+        String s = "Massimo numero convertibile: 3999.";
+        try {
+            assertEquals("", RomanPrinter.print(4000));
+            fail("Test failed as expected");
+        } catch (Exception e) {
+            assertEquals(s, e.getMessage());
+        }
+    }
     
 }
