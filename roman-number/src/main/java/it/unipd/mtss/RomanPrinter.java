@@ -84,12 +84,54 @@ public class RomanPrinter {
         " |_|  |_|"
     };
 
+    /**
+     * <p> Dato un intero num in input ne crea un ascii-art in numerazione romana
+     * @param num intero [1,3999] da convertire in numerazione romana
+     * @return stringa ascii-art
+     */
     public static String print(int num){
-        return printAsciiArt(IntegerToRoman.convert(num));
+        try {
+            return printAsciiArt(IntegerToRoman.convert(num));   
+        } catch (Exception e) {
+            throw e;
+        }
     }
     
-    private static String printAsciiArt(String romanNumber){
-        //TODO
-        return null;
+    /**
+     * <p> Data in input una stringa di numerazione romana, ne produce una contenente l'ascii-art
+     * @param romanNumber numero in numerazione romana
+     * @return stringa in ascii-art di romanNumber
+     */
+    private static String printAsciiArt(String romanNumber) {
+        String s = "";
+        for(int j = 0; j < 6; j++) {
+            for(int k = 0; k < romanNumber.length(); k++) {
+                switch(romanNumber.charAt(k)) {
+                    case 'I':
+                        s += lettera_I[j];
+                        break;
+                    case 'V':
+                        s += lettera_V[j];
+                        break;
+                    case 'X':
+                        s += lettera_X[j];
+                        break;
+                    case 'L':
+                        s += lettera_L[j];
+                        break;
+                    case 'C':
+                        s += lettera_C[j];
+                        break;
+                    case 'D':
+                        s += lettera_D[j];
+                        break;
+                    case 'M':
+                        s += lettera_M[j];
+                        break;
+                }
+            }   
+            s += "\n";
+        }
+        return s;
     }
 }
