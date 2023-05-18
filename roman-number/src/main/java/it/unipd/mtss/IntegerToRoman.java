@@ -67,4 +67,48 @@ public class IntegerToRoman  {
         }
         return s;
     }
+
+    /**
+     * <p>Converte un numero da integer [1,3999] a numerazione romana  
+     * @param number numero da convertire
+     * @return number come Stringa in numerazione romana
+    */
+    public static String convert(int number) {
+        String s = "";
+        if(number == 0) { 
+            throw new IllegalArgumentException("0 non è convertibile in numerazione romana.");
+            // System.out.println("0 non è convertibile in numerazione romana."); 
+        }
+        else if(number < 0) { 
+            throw new IllegalArgumentException("Non e' possibile convertire un numero negativo.");
+            // System.out.println("Non e' possibile convertire un numero negativo."); 
+        }
+        else if(number > 3999) { 
+            throw new IllegalArgumentException("Massimo numero convertibile: 3999.");
+            // System.out.println("Massimo numero convertibile: 3999."); 
+        }
+        else {
+            //scomporre numero
+            scomponi(number);
+            //associare ad ogni cifra la lettera corrispondente
+            for(int i = 0; i < 4; i++) {
+                switch(i) {
+                    case 0: //caso migliaia: 1000
+                        s += convNumLett(a[i], MIGLIAIA);
+                        break;
+                    case 1: //caso centinaia: 100-999
+                        s += convNumLett(a[i], CENTINAIA);
+                        break;
+                    case 2: //caso decine: 10-99
+                        s += convNumLett(a[i], DECINE);
+                        break;
+                    case 3: //caso unita': 0-9
+                        s += convNumLett(a[i], UNITA);
+                        break;
+                }
+            }
+        }
+        return s;
+    }
+    
 }
