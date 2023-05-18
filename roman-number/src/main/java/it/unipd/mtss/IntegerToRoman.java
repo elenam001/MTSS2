@@ -25,5 +25,22 @@ public class IntegerToRoman  {
      * [   0,         1,        3,     4  ]
      */
     public static int a[] = new int[4];
-
+    
+    /**
+     * <p>Assegna ad ogni cella di un array la cifra corrispondente
+     * @param num
+     * @return null
+    */
+    public static void scomponi(int num) {
+        int var = 10;
+        int dim = 4;
+        for(int i = dim-1; i >= 0; i--) {
+            if(num/var != 0) { 
+                a[i] = num%var;
+            } else {
+                a[i] = num;
+            }
+            num/=var;
+        }
+    }
 }
