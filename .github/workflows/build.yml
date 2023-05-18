@@ -2,13 +2,13 @@ on:
   push:
     branches:  
       - main 
-      - dev
+      - develop
       - feature/*
       - tests/*
   pull_request:
     branches:
       - main 
-      - dev
+      - develop
       - feature/*
       - tests/*
 
