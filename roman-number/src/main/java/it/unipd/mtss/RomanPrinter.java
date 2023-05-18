@@ -89,7 +89,7 @@ public class RomanPrinter {
      * @param num intero [1,3999] da convertire in numerazione romana
      * @return stringa ascii-art
      */
-    public static String print(int num){
+    public static String print(int num) throws Exception {
         try {
             return printAsciiArt(IntegerToRoman.convert(num));   
         } catch (Exception e) {
