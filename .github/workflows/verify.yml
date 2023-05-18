@@ -4,20 +4,18 @@ on:
       - main 
       - develop
       - feature/*
-      - tests/*
   pull_request:
     branches:
       - main 
       - develop
       - feature/*
-      - tests/*
 
 jobs:
   build:
     runs-on: ubuntu-latest
     defaults: 
       run:
-        working-directory: roman_numbers
+        working-directory: roman-numbers
 
     steps:
     - uses: actions/checkout@v3
