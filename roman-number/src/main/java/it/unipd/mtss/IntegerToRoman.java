@@ -77,15 +77,12 @@ public class IntegerToRoman  {
         String s = "";
         if(number == 0) { 
             throw new IllegalArgumentException("0 non è convertibile in numerazione romana.");
-            // System.out.println("0 non è convertibile in numerazione romana."); 
         }
         else if(number < 0) { 
             throw new IllegalArgumentException("Non e' possibile convertire un numero negativo.");
-            // System.out.println("Non e' possibile convertire un numero negativo."); 
         }
         else if(number > 3999) { 
             throw new IllegalArgumentException("Massimo numero convertibile: 3999.");
-            // System.out.println("Massimo numero convertibile: 3999."); 
         }
         else {
             //scomporre numero
@@ -110,5 +107,5 @@ public class IntegerToRoman  {
         }
         return s;
     }
-    
+
 }
